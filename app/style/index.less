@@ -1,8 +1,24 @@
 @import './normalize.less';
-@import './base.less';
-@import './mixins/header.less';
-
+@import './base.less'; // components
+@import './components/header.less';
+@import "./components/sidebar.less"; // container
+@import "./containers/findmusic.less";
 
 #root {
-  background-color: teal;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	.common {
+		height: inherit;
+
+		.container {
+			height: inherit;
+			display: flex;
+
+			.main {
+				flex: 1;
+			}
+		}
+	}
 }

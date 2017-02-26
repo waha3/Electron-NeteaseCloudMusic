@@ -37,7 +37,7 @@ const installExtensions = async () => {
     //       Promises will fail silently, which isn't what we want in development
     return Promise
       .all(extensions.map(name => installer.default(installer[name], forceDownload)))
-      .catch(console.log);
+      .catch(err => window.console.error(err));
   }
 };
 
@@ -46,8 +46,8 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1414,
-    height: 974,
+    width: 1278,
+    height: 508,
     frame: false
   });
 

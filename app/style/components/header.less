@@ -1,0 +1,48 @@
+@import '../base.less';
+
+.header {
+	width: 100%;
+	height: 62px;
+	display: flex;
+	align-items: center;
+	background-color: @RED_BASE;
+	background-image: url('../../static/image/logo.png');
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+	-webkit-app-region: drag;
+	// -webkit-user-select: none;
+	.left {
+		input {
+			width: 268px;
+			height: 28px;
+			margin-left: 322px;
+			line-height: 28px;
+			color: @WHITE;
+			font-size: 14px;
+			border-radius: 14px;
+			border: none;
+			text-indent: 1em;
+			background-color: @RED_LIGHTEN;
+			z-index: 100;
+			// -webkit-user-select: all;
+			&::-webkit-input-placeholder {
+				color: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+
+	.right {
+		margin-left: 250px;
+
+		.user {
+			image {
+				width: 32px;
+				height: 32px;
+			}
+
+			span {
+				color: @WHITE;
+			}
+		}
+	}
+}

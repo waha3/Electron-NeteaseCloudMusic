@@ -9,7 +9,7 @@ export default class Header extends Component {
         </div>
         <div className="right">
           <div className="user">
-            <image src="../app/static/image/icon.png" />
+            <image src="http://ww1.sinaimg.cn/mw600/005Suejwjw1fd3vzpdhbij30ci0gogo7.jpg" />
             <span>nirvanal</span>
           </div>
         </div>
