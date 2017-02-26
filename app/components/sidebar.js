@@ -8,8 +8,8 @@ export default class SideBar extends Component {
         <div className="wrap recommend">
           <div className="title">推荐</div>
           <ul>
-            <Link to="/findmusic"><li className="active">发现音乐</li></Link>
-            <li>私人FM</li>
+            <Link to="/"><li>发现音乐</li></Link>
+            <Link to="/privateFM"><li>私人FM</li></Link>
             <li>MV</li>
             <li>朋友</li>
           </ul>

@@ -49,7 +49,7 @@ module.exports = {
       ]
     },
     {
-      file: 'app/app.global.css',
+      file: 'app/app.css',
       clear: true
     },
     {

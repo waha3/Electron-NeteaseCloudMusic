@@ -35,4 +35,29 @@
 		height: 295px;
 		background-color: #f0f0f0;
 	}
+
+  .row {
+    .title {
+      height: 54px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid @BORDER_COLOR;
+      color: @GRAY_FONT_HOVER;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .content {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 15px;
+      .wrap {
+				width: 175px;
+				height: 175px;
+				border: 1px solid @BORDER_COLOR;
+			}
+    }
+  }
 }

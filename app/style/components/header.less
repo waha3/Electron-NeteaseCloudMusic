@@ -10,7 +10,7 @@
 	background-repeat: no-repeat;
 	background-position: 15px 10px;
 	-webkit-app-region: drag;
-	// -webkit-user-select: none;
+
 	.left {
 		input {
 			width: 268px;
@@ -23,8 +23,7 @@
 			border: none;
 			text-indent: 1em;
 			background-color: @RED_LIGHTEN;
-			z-index: 100;
-			// -webkit-user-select: all;
+			-webkit-app-region: no-drag;
 			&::-webkit-input-placeholder {
 				color: rgba(255, 255, 255, 0.5);
 			}

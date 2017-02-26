@@ -1,9 +1,15 @@
 import React, { Component} from 'react';
+import { nativeImage } from 'electron';
 
 export default class FindMusic extends Component {
   // static propTypes = {
   //   musicList: PropTypes.array.isRequired
   // }
+
+  imageBufferHandle() {
+    const image = nativeImage.createFromDataURL('http://wx1.sinaimg.cn/mw600/006g34NHgy1fd3ynqv2qnj30jg0t6mzf.jpg');
+    console.log(image);
+  }
 
   render() {
     return (
@@ -19,17 +25,17 @@ export default class FindMusic extends Component {
           </ul>
         </div>
         <div className="banner">
-          <image src="../static/image/banner.jpg" />
+          <image src={this.imageBufferHandle()} />
         </div>
-        <div className="recommendMusicList">
+        <div className="recommendMusicList row">
           <div className="title">推荐歌单</div>
           <div className="content">
             {
-              [1, 2, 3, 4, 5].map((v, i) =>
+              [1, 2, 3, 4, 5, 6].map((v, i) => (
                 <div key={i} className="wrap">
                   <div className="top">77万</div>
                 </div>
-              )
+              ))
             }
           </div>
         </div>
