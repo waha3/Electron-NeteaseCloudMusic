@@ -1,21 +1,21 @@
 import * as types from '../constants/ActionTypes.js';
-import { API } from '../api';
+import { fetchSong } from '../api';
 
-function fetchSongRequest (id) {
+function getSongRequest (id) {
   return {
     type: types.FETCH_SONG_REQUSEST,
     id
   };
 }
 
-function fetchSongResponse (data) {
+function getSongResponse (data) {
   return {
     type: types.FETCH_SONG_RESPONSE,
     data
   };
 }
 
-function fetchSongError(err) {
+function getSongError(err) {
   return {
     type: types.FETCH_SONG_ERROR,
     err
@@ -23,16 +23,16 @@ function fetchSongError(err) {
 }
 
 
-export function fetchSong () {
+export function getSong() {
   return dispatch => {
-    dispatch(fetchSongRequest());
-    fetch(API)
+    dispatch(getSongRequest());
+    fetchSong(28285912)
       .then(res => {
         window.console.log(res);
-        dispatch(fetchSongResponse());
+        dispatch(getSongResponse());
       })
       .catch(err => {
-        dispatch(fetchSongError(err));
+        dispatch(getSongError(err));
       });
   };
 }

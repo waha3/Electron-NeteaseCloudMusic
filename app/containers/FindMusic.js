@@ -1,14 +1,12 @@
-import React, { Component} from 'react';
-import { nativeImage } from 'electron';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
-export default class FindMusic extends Component {
-  // static propTypes = {
-  //   musicList: PropTypes.array.isRequired
-  // }
-
-  imageBufferHandle() {
-    const image = nativeImage.createFromDataURL('http://wx1.sinaimg.cn/mw600/006g34NHgy1fd3ynqv2qnj30jg0t6mzf.jpg');
-    console.log(image);
+class FindMusic extends Component {
+  state = {
+    imageUrl: 'http://wx1.sinaimg.cn/mw600/006GlaT2ly1fd3lc43k07j30ia0rfwie.jpg',
+    bannerUrl: 'http://p3.music.126.net/q1Ta11Cmfd8gy56mvQnTTQ==/18929192183792474.jpg',
+    playlistId: 37190740
   }
 
   render() {
@@ -25,21 +23,23 @@ export default class FindMusic extends Component {
           </ul>
         </div>
         <div className="banner">
-          <image src={this.imageBufferHandle()} />
+          <img src={this.state.bannerUrl} />
         </div>
         <div className="recommendMusicList row">
           <div className="title">推荐歌单</div>
           <div className="content">
-            {
-              [1, 2, 3, 4, 5, 6].map((v, i) => (
-                <div key={i} className="wrap">
-                  <div className="top">77万</div>
-                </div>
-              ))
-            }
+            <Link to={'/playlist/' + this.state.playlistId}>
+              <div className="wrap">
+                <div className="top">77万</div>
+                <img src={this.state.imageUrl} alt=""/>
+                <div className="row_title">每日歌曲推荐飒飒飒飒飒飒撒飒飒飒飒</div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default connect()(FindMusic);

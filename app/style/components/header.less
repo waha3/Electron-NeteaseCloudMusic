@@ -24,6 +24,7 @@
 			text-indent: 1em;
 			background-color: @RED_LIGHTEN;
 			-webkit-app-region: no-drag;
+
 			&::-webkit-input-placeholder {
 				color: rgba(255, 255, 255, 0.5);
 			}
@@ -34,13 +35,18 @@
 		margin-left: 250px;
 
 		.user {
-			image {
+			display: flex;
+			align-items: center;
+
+			img {
 				width: 32px;
 				height: 32px;
+				border-radius: 50%;
 			}
 
 			span {
-				color: @WHITE;
+				color: @GRAY_BASE;
+				margin-left: 10px;
 			}
 		}
 	}

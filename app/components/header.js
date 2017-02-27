@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { nativeImage } from 'electron';
-// import { readFileSync } from 'fs';
 
 export default class Header extends Component {
   state = {
@@ -25,7 +23,7 @@ export default class Header extends Component {
         </div>
         <div className="right">
           <div className="user">
-            <image src={this.state.imageUrl} />
+            <img src={this.state.imageUrl} />
             <span>nirvanal</span>
           </div>
         </div>
