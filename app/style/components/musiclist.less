@@ -1,0 +1,73 @@
+@import "../base.less";
+
+.musiclist {
+	> .top {
+		width: 100%;
+		height: 35px;
+		line-height: 35px;
+		color: @GRAY_FONT;
+		border-bottom: 1px solid @BORDER_COLOR;
+		display: flex;
+	}
+
+	.col {
+		border-right: 1px solid @BORDER_COLOR;
+		text-indent: 1em;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	.col_1 {
+		width: 64px;
+		text-indent: 3em;
+	}
+
+	.col_2 {
+		width: 70px;
+	}
+
+	.col_3 {
+		width: 254px;
+	}
+
+	.col_4 {
+		width: 164px;
+	}
+
+	.col_5 {
+		width: 254px;
+	}
+
+	.col_6 {
+		flex: auto;
+	}
+
+	> .lists {
+		> div {
+			display: flex;
+			height: 35px;
+			line-height: 35px;
+
+			> div {
+				text-indent: 1em;
+        a {
+          color: @GRAY_FONT;
+        }
+			}
+
+			&:nth-child(even) {
+				background-color: @GRAY_BASE;
+			}
+
+			&:hover {
+				background-color: @HOVER_COLOR;
+			}
+
+			.active {
+				background-color: @CLICK_COLOR;
+			}
+		}
+	}
+}

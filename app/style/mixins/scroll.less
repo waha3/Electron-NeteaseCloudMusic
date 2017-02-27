@@ -1,20 +1,21 @@
-//修改sroll样式
+@import "../base.less";
 
-.scroll () {
+//修改sroll样式
+.scroll {
 	&::-webkit-scrollbar {
-		width: 12px;
-		background-color: #F5F5F5;
+		width: 10px;
+		background-color: @GRAY_BASE;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		border-radius: 10px;
-		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-		background-color: #555;
+		border-radius: 5px;
+		background-color: @SCROLLBARCOLOR;
+		&:hover {
+			background-color: #ccc;
+		}
 	}
 
 	&::-webkit-scrollbar-track {
-		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-		border-radius: 10px;
-		background-color: #F5F5F5;
+		background-color: @GRAY_BASE;
 	}
 }

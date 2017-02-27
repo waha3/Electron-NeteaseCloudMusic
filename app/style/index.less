@@ -2,9 +2,14 @@
 // components
 @import './base.less';
 @import './components/header.less';
+@import './components/musiclist.less';
 // container
 @import "./components/sidebar.less";
 @import "./containers/findmusic.less";
+@import "./containers/playlist.less";
+
+//mixins
+@import "./mixins/scroll.less";
 
 #root {
 	width: 100%;
@@ -18,8 +23,10 @@
 			height: inherit;
 			display: flex;
 
-			.main {
+			> .main {
 				flex: 1;
+				overflow-y: scroll;
+				.scroll();
 			}
 		}
 	}

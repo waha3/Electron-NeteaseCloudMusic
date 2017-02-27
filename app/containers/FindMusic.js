@@ -6,7 +6,7 @@ class FindMusic extends Component {
   state = {
     imageUrl: 'http://wx1.sinaimg.cn/mw600/006GlaT2ly1fd3lc43k07j30ia0rfwie.jpg',
     bannerUrl: 'http://p3.music.126.net/q1Ta11Cmfd8gy56mvQnTTQ==/18929192183792474.jpg',
-    playlistId: 37190740
+    playlistId: 613093606
   }
 
   render() {
@@ -28,7 +28,7 @@ class FindMusic extends Component {
         <div className="recommendMusicList row">
           <div className="title">推荐歌单</div>
           <div className="content">
-            <Link to={'/playlist/' + this.state.playlistId}>
+            <Link to={`/playlist/${this.state.playlistId}`}>
               <div className="wrap">
                 <div className="top">77万</div>
                 <img src={this.state.imageUrl} alt=""/>
