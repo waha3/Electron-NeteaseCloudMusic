@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { getPlaylist } from '../actions/playlist.js';
+import { getComments } from '../actions/comments.js';
 import MusicList from '../components/musiclist.js';
 
 class PlayList extends Component {
@@ -11,9 +12,37 @@ class PlayList extends Component {
     playlist: PropTypes.object.isRequired
   }
 
+  state = {
+    tabsActive: [true, false, false]
+  }
+
   componentDidMount() {
     const { dispatch, params } = this.props;
     dispatch(getPlaylist(params.id));
+  }
+
+  tabsHandle(index) {
+    const { dispatch, params } = this.props;
+    switch (index) {
+      case 0:
+        this.setState({
+          tabsActive: [true, false, false]
+        });
+        break;
+      case 1:
+        this.setState({
+          tabsActive: [false, true, false]
+        });
+        dispatch(getComments(params.id));
+        break;
+      case 2:
+        this.setState({
+          tabsActive: [false, false, true]
+        });
+        break;
+      default:
+        return;
+    }
   }
 
   render() {
@@ -63,13 +92,20 @@ class PlayList extends Component {
         <div className="main">
           <div className="tabs">
             <ul>
-              <li className="active">歌曲列表</li>
-              <li>评论({commentCount})</li>
-              <li>收藏者</li>
+              <li className={this.state.tabsActive[0] ? 'active' : ''} onClick={() => this.tabsHandle(0)}>歌曲列表</li>
+              <li className={this.state.tabsActive[1] ? 'active' : ''} onClick={() => this.tabsHandle(1)}>评论({commentCount})</li>
+              <li className={this.state.tabsActive[2] ? 'active' : ''} onClick={() => this.tabsHandle(2)}>收藏者</li>
             </ul>
           </div>
-          <MusicList
-           lists={tracks} />
+          <div className="tabContent">
+            <div className={this.state.tabsActive[0] ? 'active' : ''}>
+              <MusicList
+                lists={tracks}
+              />
+            </div>
+            <div className={this.state.tabsActive[1] ? 'active' : ''}>2</div>
+            <div className={this.state.tabsActive[2] ? 'active' : ''}>3</div>
+          </div>
         </div>
       </div>
     );

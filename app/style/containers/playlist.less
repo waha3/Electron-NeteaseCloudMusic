@@ -73,6 +73,10 @@
 						border: 1px solid @BORDER_COLOR;
 						border-radius: 4px;
 						margin-right: 20px;
+						cursor: pointer;
+						&:hover {
+							background-color: @HOVER_COLOR;
+						}
 					}
 				}
 
@@ -112,7 +116,7 @@
 					cursor: pointer;
 
 					&.active {
-						background-color: @RED_BASE;
+						background-color: @RED_BASE !important;
 						color: @WHITE;
 						border: 1px solid @RED_BASE;
 					}
@@ -121,6 +125,15 @@
 						background-color: @HOVER_COLOR;
 					}
 				}
+			}
+		}
+
+		.tabContent {
+			> div {
+				display: none;
+			}
+			.active {
+				display: block;
 			}
 		}
 	}
