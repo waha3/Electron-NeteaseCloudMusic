@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import MusicList from './components/musiclist.js';
 
 export default class Comments extends Component {
   static propTypes = {
-    playlist: PropTypes.object.isRequired
+    name: PropTypes.string.isRequired,
+    coverImgId: PropTypes.string.isRequired,
+    creator: PropTypes.object.isRequired,
+    createTime: PropTypes.string.isRequired
   }
 
   render() {
@@ -27,7 +29,7 @@ export default class Comments extends Component {
           </div>
           <div>
             <div className="_top">
-              <span>歌单</span>
+              <span>{detailName}</span>
               <div className="title">{name}</div>
             </div>
             <div className="_middle">

@@ -1,6 +1,6 @@
 {
-  "name": "electron-neteaseMusic",
-  "productName": "electron-neteaseMusic",
+  "name": "electron-neteasecloudmusic",
+  "productName": "electron-neteasecloudmusic",
   "version": "1.0.0",
   "description": "Electron music App is based React",
   "main": "./main.js",
