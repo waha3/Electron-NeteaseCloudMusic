@@ -1,12 +1,12 @@
 import * as types from '../constants/ActionTypes.js';
 
-export function playlist(state={}, action) {
+export function album(state={}, action) {
   switch (action.type) {
-    case types.FETCH_PLAYLIST_REQUSEST:
+    case types.FETCH_ALBUM_REQUSEST:
       return state;
-    case types.FETCH_PLAYLIST_RESPONSE:
+    case types.FETCH_ALBUM__RESPONSE:
       return {...state, ...action.data};
-    case types.FETCH_PLAYLIST_ERROR:
+    case types.FETCH_ALBUM_ERROR:
       return {...state, ...err};
     default:
       return state;

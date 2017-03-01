@@ -7,7 +7,7 @@ export function songs(state={}, action) {
     case types.FETCH_SONG_RESPONSE:
       return {...state, ...action.data};
     case types.FETCH_SONG_ERROR:
-      return {...state, err};
+      return {...state, ...err};
     default:
       return state;
   }
