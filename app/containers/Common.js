@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Header from '../components/header.js';
 import SideBar from '../components/sidebar.js';
+import PlayBar from '../components/playbar.js';
 
 export default class Common extends Component {
   static propTypes = {
@@ -18,6 +19,7 @@ export default class Common extends Component {
               {children}
             </div>
         </div>
+        <PlayBar />
       </div>
     );
   }

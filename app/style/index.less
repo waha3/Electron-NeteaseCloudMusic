@@ -3,6 +3,8 @@
 @import './base.less';
 @import './components/header.less';
 @import './components/musiclist.less';
+@import "./components/playbar.less";
+
 // container
 @import "./components/sidebar.less";
 @import "./containers/findmusic.less";
@@ -15,13 +17,16 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	position: relative;
 
 	.common {
-		height: inherit;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 
 		.container {
-			height: inherit;
 			display: flex;
+			flex: 1;
 
 			> .main {
 				flex: 1;
