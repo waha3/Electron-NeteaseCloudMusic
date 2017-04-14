@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
+import { remote, ipcRenderer } from 'electron';
+const app = remote.app;
 
 export default class Header extends Component {
   state = {
-    placeholder: '搜索音乐，歌手，歌词，用户',
-    imageUrl: 'http://ww1.sinaimg.cn/mw600/005Suejwjw1fd3vzpdhbij30ci0gogo7.jpg'
+    placeholder: '搜索音乐，歌手，歌词，用户'
   }
 
   focusHandle = () => this.setState({placeholder: ''});
 
   blurHandle = () => this.setState({placeholder: '搜索音乐，歌手，歌词，用户'});
 
+  quitHandle = () => app.quit();
+
+  minsizeHandle = () => ipcRenderer.send('minsize');
+
+  maxsizeHandle = () => ipcRenderer.send('maxsize');
+
   render() {
     return (
       <div className="header">
         <div className="left">
+          <div className="navigation">
+            <span>{'<'}</span>
+            <span>{'>'}</span>
+          </div>
           <input
             type="text"
             placeholder={this.state.placeholder}
             onFocus={this.focusHandle}
             onBlur={this.blurHandle}
-            />
+          />
         </div>
         <div className="right">
-          <div className="user">
-            <img src={this.state.imageUrl} />
-            <span>nirvanal</span>
+          <div className="header_action">
+            <span className="resize" onClick={this.resizeHandle}><img src="static/image/resize.png" alt=""/></span>
+            <span className="small" onClick={this.minsizeHandle}><img src="static/image/small.png" alt=""/></span>
+            <span className="large" onClick={this.maxsizeHandle}><img src="static/image/large.png" alt=""/></span>
+            <span className="quit" onClick={this.quitHandle}><img src="static/image/quit.png" alt=""/></span>
           </div>
         </div>
       </div>

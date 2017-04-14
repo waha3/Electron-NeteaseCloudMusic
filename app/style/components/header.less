@@ -2,9 +2,10 @@
 
 .header {
 	width: 100%;
-	height: 62px;
+	height: 52px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	background-color: @RED_BASE;
 	background-image: url('../../static/image/logo.png');
 	background-repeat: no-repeat;
@@ -12,41 +13,68 @@
 	-webkit-app-region: drag;
 
 	.left {
+		display: flex;
+		align-items: center;
+
 		input {
-			width: 268px;
-			height: 28px;
-			margin-left: 322px;
-			line-height: 28px;
+			width: 218px;
+			height: 22px;
+			line-height: 22px;
 			color: @WHITE;
 			font-size: 14px;
 			border-radius: 14px;
 			border: none;
-			text-indent: 1em;
+			text-indent: 10px;
 			background-color: @RED_LIGHTEN;
 			-webkit-app-region: no-drag;
+			margin-left: 10px;
 
 			&::-webkit-input-placeholder {
 				color: rgba(255, 255, 255, 0.5);
+				font-size: 12px;
+			}
+		}
+
+		.navigation {
+			margin-left: 192px;
+			border-radius: @radius;
+			border: 0.5px solid #636060;
+			height: 22px;
+			width: 50px;
+
+			> span {
+				display: inline-block;
+				height: 100%;
+				font-size: 18px;
+				color: @WHITE;
+				text-align: center;
+				line-height: 19px;
+				cursor: pointer;
+
+				&:first-child {
+					border-right: 0.5px solid #636060;
+					width: 24px;
+				}
+
+				&:last-child {
+					width: 25px;
+				}
 			}
 		}
 	}
 
 	.right {
-		margin-left: 250px;
+		margin-right: 10px;
+		display: flex;
+		align-items: center;
 
-		.user {
-			display: flex;
-			align-items: center;
-
-			img {
-				width: 32px;
-				height: 32px;
-				border-radius: 50%;
-			}
-
+		.header_action {
 			span {
-				color: @GRAY_BASE;
-				margin-left: 10px;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				margin-left: 5px;
 			}
 		}
 	}
