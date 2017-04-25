@@ -1,7 +1,5 @@
 import { app, BrowserWindow, Menu, ipcMain } from 'electron';
 
-// let menu;
-// let template;
 let mainWindow = null;
 
 if (process.env.NODE_ENV === 'production') {
@@ -46,10 +44,13 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1200,
-    height: 780,
-    frame: false,
-    resizable: true
+    width: 1000,
+    height: 800,
+    frame: true,
+    resizable: true,
+    minWidth: 1000,
+    minHeight: 800,
+    directWrite: false
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
