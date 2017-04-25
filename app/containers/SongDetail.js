@@ -1,13 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { getSong } from '../actions/songs.js';
 import Disc from '../components/disc.js';
 import Lyric from '../components/lyric.js';
-import { getSong } from '../actions/songs.js';
+import Video from '../components/video.js';
 
 class SongDetail extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    params: PropTypes.object.isRequired
+    params: PropTypes.object.isRequired,
+    url: PropTypes.string.isRequired
   }
 
   componentDidMount() {
@@ -17,8 +19,10 @@ class SongDetail extends Component {
   }
 
   render() {
+    const { url } = this.props;
     return (
       <div className="songDetail">
+        <Video source={url}/>
         <div className="content">
           <div>
             <Disc />
@@ -36,9 +40,9 @@ class SongDetail extends Component {
 }
 
 function filter(store) {
-  return {
-    ...store.songs
-  };
+  return Object.assign({}, {
+    url: ''
+  }, store.songs);
 }
 
 export default connect(filter)(SongDetail);
