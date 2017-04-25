@@ -14,6 +14,8 @@ export default class MusicList extends Component {
     doubleClick(songId);
   }
 
+  doubleClickHandle = () => {}
+
   render() {
     const { lists } = this.props;
     return (
