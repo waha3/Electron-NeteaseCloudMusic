@@ -4,11 +4,13 @@ import Common from './containers/Common.js';
 import FindMusic from './containers/FindMusic.js';
 import PrivateFM from './containers/PrivateFM.js';
 import PlayList from './containers/PlayList.js';
+import SongDetail from './containers/SongDetail.js';
 
 export default (
   <Route path="/" component={Common}>
     <IndexRoute component={FindMusic} />
     <Route path="privateFM" component={PrivateFM} />
     <Route path="playlist/:id" component={PlayList} />
+    <Route path="songdetail/:id"  component={SongDetail} />
   </Route>
 );

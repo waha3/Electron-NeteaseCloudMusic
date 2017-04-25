@@ -23,13 +23,12 @@ function getSongError(err) {
 }
 
 
-export function getSong() {
+export function getSong(id) {
   return dispatch => {
     dispatch(getSongRequest());
-    fetchSong(28285912)
+    fetchSong(id)
       .then(res => {
-        window.console.log(res);
-        dispatch(getSongResponse());
+        dispatch(getSongResponse(res));
       })
       .catch(err => {
         dispatch(getSongError(err));

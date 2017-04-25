@@ -9,7 +9,8 @@ class PlayList extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     params: PropTypes.object.isRequired,
-    playlist: PropTypes.object.isRequired
+    playlist: PropTypes.object.isRequired,
+    router: PropTypes.object.isRequired
   }
 
   state = {
@@ -43,6 +44,13 @@ class PlayList extends Component {
       default:
         return;
     }
+  }
+
+  doubleClick = (id) => {
+    const { router } = this.props;
+    router.push({
+      pathname: `/songdetail/${id}`
+    });
   }
 
   render() {
@@ -101,6 +109,7 @@ class PlayList extends Component {
             <div className={this.state.tabsActive[0] ? 'active' : ''}>
               <MusicList
                 lists={tracks}
+                doubleClick={this.doubleClick}
               />
             </div>
             <div className={this.state.tabsActive[1] ? 'active' : ''}>2</div>

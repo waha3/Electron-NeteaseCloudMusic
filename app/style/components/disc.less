@@ -1,0 +1,44 @@
+.disc {
+	width: 100%;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    background-image: url('../../static/image/needle.png');
+		background-repeat: no-repeat;
+		background-size: 100%;
+    width: 15%;
+    height: 170px;
+  }
+
+	.discPlate {
+		width: 350px;
+		height: 350px;
+		background-image: url('../../static/image/disc.png');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 70%;
+			height: 70%;
+		}
+	}
+  .btns {
+    position: absolute;
+    bottom: 10px;
+    > button {
+      padding: 5px 10px;
+      border-radius: @radius;
+      border: 1px solid @BORDER_COLOR;
+    }
+  }
+}

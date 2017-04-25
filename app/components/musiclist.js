@@ -4,11 +4,14 @@ import { Link } from 'react-router';
 
 export default class MusicList extends Component {
   static propTypes = {
-    lists: PropTypes.array.isRequired
+    lists: PropTypes.array.isRequired,
+    doubleClick: PropTypes.func.isRequired
   }
 
-  doubleClickHandle = () => {
-    console.log(111);
+  doubleClickHandle = (i) => {
+    const { doubleClick, lists } = this.props;
+    const songId = lists[i].id;
+    doubleClick(songId);
   }
 
   render() {
@@ -29,7 +32,7 @@ export default class MusicList extends Component {
               <div key={i}>
                 <div className="col_1">{ i > 9 ? i+1 : `0${i+1}` }</div>
                 <div className="col_2"><span>L </span><span> D</span></div>
-                <div className="col_3" onDoubleClick={this.doubleClickHandle}>{v.name}</div>
+                <div className="col_3" onDoubleClick={() => this.doubleClickHandle(i)}>{v.name}</div>
                 <div className="col_4">
                   {
                     v.ar.map(value => value.name).join('/')
