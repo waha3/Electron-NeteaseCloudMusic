@@ -4,7 +4,18 @@ const app = remote.app;
 
 export default class Header extends Component {
   state = {
-    placeholder: '搜索音乐，歌手，歌词，用户'
+    placeholder: '搜索音乐，歌手，歌词，用户',
+    backBtnDisabled: false,
+    forwardDisabled: false
+  }
+
+  componentWillMount() {
+    if (window.history.length) {
+      this.setState({
+        backBtnDisabled: true,
+        forwardDisabled: true
+      });
+    }
   }
 
   focusHandle = () => this.setState({placeholder: ''});
@@ -17,13 +28,21 @@ export default class Header extends Component {
 
   maxsizeHandle = () => ipcRenderer.send('maxsize');
 
+  backRouterHandle = () => {
+    if (window.history.length) {
+      window.history.back();
+    }
+  }
+
+  nextRouterHandle = () => window.history.forward();
+
   render() {
     return (
       <div className="header">
         <div className="left">
           <div className="navigation">
-            <span>{'<'}</span>
-            <span>{'>'}</span>
+            <span onClick={this.backRouterHandle}>{'<'}</span>
+            <span onClick={this.nextRouterHandle}>{'>'}</span>
           </div>
           <input
             type="text"
