@@ -6,7 +6,7 @@ class FindMusic extends Component {
   state = {
     imageUrl: 'http://wx1.sinaimg.cn/mw600/006GlaT2ly1fd3lc43k07j30ia0rfwie.jpg',
     bannerUrl: 'http://p3.music.126.net/q1Ta11Cmfd8gy56mvQnTTQ==/18929192183792474.jpg',
-    playlistId: 613093606
+    playlistId: 6212327
   }
 
   render() {

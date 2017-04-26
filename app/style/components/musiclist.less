@@ -50,9 +50,13 @@
 
 			> div {
 				text-indent: 1em;
-        a {
-          color: @GRAY_FONT;
-        }
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+
+				a {
+					color: @GRAY_FONT;
+				}
 			}
 
 			&:nth-child(even) {
