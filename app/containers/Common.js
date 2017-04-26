@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Header from '../components/header.js';
 import SideBar from '../components/sidebar.js';
 import PlayBar from '../components/playbar.js';
+import PropTypes from 'prop-types';
 
 const childrenName = 'Connect(SongDetail)';
 

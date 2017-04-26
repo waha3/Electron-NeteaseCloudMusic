@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { getPlaylist } from '../actions/playlist.js';
@@ -56,7 +57,7 @@ class PlayList extends Component {
   render() {
     const {
       name,
-      coverImgId,
+      // coverImgId,
       creator,
       createTime,
       shareCount,
@@ -70,7 +71,7 @@ class PlayList extends Component {
       <div className="playlist">
         <div className="top">
           <div>
-            <img src={`http://p3.music.126.net/VybpJPeaTBHcYYxnAMwrsg==/${coverImgId}.jpg?param=200y200`} alt=""/>
+            <img src={''} alt=""/>
           </div>
           <div>
             <div className="_top">

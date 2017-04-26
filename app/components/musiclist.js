@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'react-router';
 
@@ -13,8 +14,6 @@ export default class MusicList extends Component {
     const songId = lists[i].id;
     doubleClick(songId);
   }
-
-  doubleClickHandle = () => {}
 
   render() {
     const { lists } = this.props;
