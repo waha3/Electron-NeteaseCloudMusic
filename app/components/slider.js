@@ -2,11 +2,25 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
 export default class Slider extends Component {
+  constructor(props) {
+    super(props);
+
+    // when init these value is valued 0
+    this.sliderWidth = 0;
+    this.oldOffsetValue = 0;
+  }
+
   state = {
     initPageX: null,
-    initPageY: null,
     isDraging: false,
-    offsetValue: 0
+    offsetValue: 0,
+  }
+
+  componentDidMount() {
+    const sliderDOM = findDOMNode(this.sliderVDOM);
+    const btnDOM = findDOMNode(this.btnVDOM);
+    this.sliderWidth = sliderDOM.clientWidth;
+    this.oldOffsetValue = btnDOM.offsetLeft;
   }
 
   _handleMouseDown = (event) => {
@@ -19,6 +33,13 @@ export default class Slider extends Component {
     window.addEventListener('mouseup', this._handleDragEnd);
   }
 
+  _dragStart = (event) => {
+    this.setState({
+      initPageX: event.pageX,
+      isDraging: true
+    });
+  }
+
   _handleDraging = (event) => {
     const { isDraging } = this.state;
     if (isDraging) {
@@ -26,47 +47,56 @@ export default class Slider extends Component {
     }
   }
 
-  _handleDragEnd = () => {
-    window.removeEventListener('mousemove', this._handleDraging);
-    window.removeEventListener('mouseup', this._handleDragEnd);
-    this.setState({
-      isDraging: false
-    });
-  }
-
-  _dragStart = (event) => {
-    this.setState({
-      initPageX: event.pageX,
-      initPageY: event.pageY,
-      isDraging: true
-    });
-  }
-
   _setPostion = (event) => {
-    let diff, currentX, currentY;
+    let diff, currentX;
     currentX = event.pageX;
-    currentY = event.pageY;
-    const { initPageX, initPageY, isDraging } = this.state;
+    const { initPageX, isDraging } = this.state;
     if (isDraging) {
       diff = currentX - initPageX;
-      // console.log(diff);
+      if (diff + this.oldOffsetValue >= this.sliderWidth) {
+        diff = this.sliderWidth - this.oldOffsetValue;
+      } else if (diff + this.oldOffsetValue <= 0) {
+        diff = - this.oldOffsetValue;
+      }
       this.setState({
         offsetValue: diff
       });
     }
   }
 
-  impackCheck() {}
+  _handleDragEnd = () => {
+    const { isDraging } = this.state;
+    const btnDOM = findDOMNode(this.btnVDOM);
+    if (isDraging) {
+      window.removeEventListener('mousemove', this._handleDraging);
+      window.removeEventListener('mouseup', this._handleDragEnd);
+      this.oldOffsetValue = btnDOM.offsetLeft;
+      this.setState({
+        isDraging: false,
+        offsetValue: 0
+      });
+    }
+  }
+
+  impackCheck() {
+    if (this.oldOffsetValue + this.state.offsetValue < 0) {
+      this.offsetValue = 0;
+    }
+    if (this.oldOffsetValue + this.state.offsetValue > this.sliderWidth) {
+      this.offsetValue = this.sliderWidth;
+    }
+  }
 
   render() {
     const { offsetValue } = this.state;
     return (
-      <div className="slider">
+      <div className="slider"
+        ref={slider => {this.sliderVDOM = slider;}}>
         <button
-          style={{'left': offsetValue}}
+          ref={btn => {this.btnVDOM = btn;}}
+          style={{'left': offsetValue + this.oldOffsetValue}}
           className="sliderBtn"
           onMouseDown={this._handleMouseDown}
-          ref={_button => {this.btn = _button;}}
         />
       </div>
     );

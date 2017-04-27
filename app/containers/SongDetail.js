@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getSong } from '../actions/songs.js';
 import Disc from '../components/disc.js';
 import Lyric from '../components/lyric.js';
-import Video from '../components/video.js';
 
 class SongDetail extends Component {
   static propTypes = {
@@ -20,10 +19,8 @@ class SongDetail extends Component {
   }
 
   render() {
-    const { url } = this.props;
     return (
       <div className="songDetail">
-        <Video source={url}/>
         <div className="content">
           <div>
             <Disc />

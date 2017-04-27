@@ -45,11 +45,11 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1000,
-    height: 800,
-    frame: true,
+    height: 900,
+    frame: false,
     resizable: true,
     minWidth: 1000,
-    minHeight: 800,
+    minHeight: 900,
     directWrite: false
   });
 

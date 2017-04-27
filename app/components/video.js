@@ -10,16 +10,16 @@ export default class Video extends Component {
   render() {
     const { source } = this.props;
     return (
-      <div className="video" style={{'display': 'block'}}>
         <video
+          style={{'display': 'none'}}
+          className="video"
           autoPlay
           loop={false}
           controls
-          width="100"
+          width="300"
           height="20"
           src={source}>
         </video>
-      </div>
     );
   }
 }

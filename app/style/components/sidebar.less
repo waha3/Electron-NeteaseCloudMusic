@@ -4,18 +4,24 @@
 	border-right: 1px solid @BORDER_COLOR;
 	background-color: @GRAY_BASE;
 
+	.activeLink {
+		li {
+			background-color: red;
+		}
+	}
+
 	.wrap {
 		color: @GRAY_FONT;
 
 		.title {
 			text-indent: 1em;
-			height: 40px;
-			line-height: 40px;
+			height: 30px;
+			line-height: 30px;
 		}
 
 		ul {
 			li {
-				height: 40px;
+				height: 33px;
 				display: flex;
 				align-items: center;
 				text-indent: 2em;
@@ -27,6 +33,7 @@
 					color: @GRAY_FONT_HOVER;
 					background-color: @GRAY_BG;
 					border-left: 4px solid @RED_BASE;
+					text-indent: (2*@fontSize - 4);
 				}
 			}
 		}

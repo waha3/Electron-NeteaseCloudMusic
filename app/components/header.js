@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { remote, ipcRenderer } from 'electron';
+import { Link } from 'react-router';
 const app = remote.app;
 
 export default class Header extends Component {
@@ -39,6 +40,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
+        <Link to="/" className="header_link"></Link>
         <div className="left">
           <div className="navigation">
             <span onClick={this.backRouterHandle}>{'<'}</span>

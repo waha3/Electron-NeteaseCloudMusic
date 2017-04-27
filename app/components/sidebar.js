@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { IndexLink } from 'react-router';
 
 export default class SideBar extends Component {
   render() {
@@ -8,8 +8,8 @@ export default class SideBar extends Component {
         <div className="wrap recommend">
           <div className="title">推荐</div>
           <ul>
-            <Link to="/"><li>发现音乐</li></Link>
-            <Link to="/privateFM"><li>私人FM</li></Link>
+            <IndexLink to="/" activeClassName="active"><li>发现音乐</li></IndexLink>
+            <IndexLink to="/privateFM" activeClassName="active"><li>私人FM</li></IndexLink>
             <li>MV</li>
             <li>朋友</li>
           </ul>
