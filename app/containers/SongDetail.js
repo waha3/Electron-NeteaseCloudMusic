@@ -22,11 +22,13 @@ class SongDetail extends Component {
     return (
       <div className="songDetail">
         <div className="content">
-          <div>
-            <Disc />
-          </div>
-          <div>
-            <Lyric />
+          <div className="wrap">
+            <div>
+              <Disc />
+            </div>
+            <div>
+              <Lyric />
+            </div>
           </div>
         </div>
         <div className="comments">

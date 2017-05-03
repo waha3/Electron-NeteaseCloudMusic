@@ -30,20 +30,21 @@ class PlayBar extends Component {
     return (
       <div className="playbar">
         <div className="left">
-          <div className="previousBtn" onClick={this.handlePreviousSong}>A</div>
-          <div className="startBtn" onClick={this.handleStartOrPause}>O</div>
-          <div className="nextBtn" onClick={this.handleNextSong}>B</div>
+          <div>
+            <div className="previousBtn" onClick={this.handlePreviousSong}>A</div>
+            <div className="startBtn" onClick={this.handleStartOrPause}>O</div>
+            <div className="nextBtn" onClick={this.handleNextSong}>B</div>
+          </div>
         </div>
         <div className="middle">
-          <span>04:33</span>
+          <span className="beginTime">04:33</span>
           <Slider />
-          <span>06:00</span>
+          <span className="endTime">06:00</span>
         </div>
         <div className="right">
-          <span>sound</span>
-          <span>播放模式</span>
-          <span>词</span>
-          <span>100</span>
+          <div>
+            <Slider />
+          </div>
         </div>
         <Video
           source={url}
