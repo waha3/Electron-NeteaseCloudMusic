@@ -8,6 +8,7 @@ export default class Slider extends Component {
     // when init these value is valued 0
     this.sliderWidth = 0;
     this.oldOffsetValue = 0;
+    this.btnWidth = 7.5;
   }
 
   state = {
