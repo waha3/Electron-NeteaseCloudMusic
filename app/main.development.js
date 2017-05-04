@@ -50,7 +50,7 @@ app.on('ready', async () => {
     resizable: true,
     minWidth: 1000,
     minHeight: 900,
-    directWrite: false
+    directWrite: true
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
