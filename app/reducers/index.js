@@ -6,6 +6,7 @@ import { comments } from './comments.js';
 import { album } from './album.js';
 import { lyric } from './lyric.js';
 import { songdetail } from './songdetail.js';
+import { recommendplaylist } from './recommendplaylist.js';
 
 const rootReducer = combineReducers({
   routing,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   comments,
   album,
   lyric,
-  songdetail
+  songdetail,
+  recommendplaylist
 });
 
 export default rootReducer;
