@@ -1,0 +1,29 @@
+.nav {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid @BORDER_COLOR;
+
+	ul {
+		margin: auto;
+		width: 480px;
+		height: 45px;
+		color: @GRAY_FONT_HOVER;
+		display: flex;
+		flex-direction: row;
+		font-size: 14px;
+		justify-content: space-between;
+
+		li {
+			width: 58px;
+			line-height: 45px;
+			text-align: center;
+			box-sizing: border-box;
+      cursor: pointer;
+		}
+
+		.active {
+			color: @RED_BASE;
+			border-bottom: 2px solid @RED_BASE;
+		}
+	}
+}

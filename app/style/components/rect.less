@@ -1,0 +1,38 @@
+.musicRect {
+	width: 143px;
+	height: auto;
+	position: relative;
+	margin-bottom: 30px;
+
+	.mask {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		height: 20px;
+		line-height: 20px;
+		background-color: rgba(0, 0, 0, 0.2);
+		color: @WHITE;
+		text-align: right;
+	}
+
+	.make_tips {
+		position: absolute;
+		top: 0;
+		padding: 4px 8px;
+		background-color: rgba(0, 0, 0, 0.2);
+		color: @WHITE;
+		transition: all 1s ease;
+		width: calc(100% - 10.5px);
+	}
+
+	img {
+		width: 143px;
+		height: 143px;
+		border: 1px solid @BORDER_COLOR;
+	}
+
+	.rect_title {
+		color: @GRAY_FONT_HOVER;
+		line-height: 1.8em;
+	}
+}

@@ -48,7 +48,7 @@ app.on('ready', async () => {
     height: 900,
     frame: false,
     resizable: true,
-    minWidth: 1000,
+    minWidth: 1200,
     minHeight: 900,
     directWrite: true
   });

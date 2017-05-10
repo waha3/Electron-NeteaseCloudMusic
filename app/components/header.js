@@ -54,6 +54,11 @@ export default class Header extends Component {
           />
         </div>
         <div className="right">
+          <div className="login">
+            <img src="static/image/avatar.jpg" alt=""/>
+            <span>未登录</span>
+            <div className="triangle"></div>
+          </div>
           <div className="header_action">
             <span className="resize" onClick={this.resizeHandle}><img src="static/image/resize.png" alt=""/></span>
             <span className="small" onClick={this.minsizeHandle}><img src="static/image/small.png" alt=""/></span>

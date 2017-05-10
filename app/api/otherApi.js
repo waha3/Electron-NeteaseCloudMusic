@@ -19,5 +19,5 @@ export function fetchBanner() {
 }
 
 export function fetchRecommendPlaylist() {
-  return baseFetch('/personalized/newsong');
+  return baseFetch('/personalized');
 }

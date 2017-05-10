@@ -1,12 +1,14 @@
 import * as types from '../constants/ActionTypes.js';
 
-export function recommendplaylist(state={}, action) {
+export function banner(state={
+  banners: []
+}, action) {
   switch (action.type) {
-    case types.FETCH_RECOMMENDPLAYLIST_REQUSEST:
+    case types.FETCH_BANNER_REQUSEST:
       return state;
-    case types.FETCH_RECOMMENDPLAYLIST_RESPONSE:
+    case types.FETCH_BANNER_RESPONSE:
       return {...state, ...action.data};
-    case types.FETCH_RECOMMENDPLAYLIST_ERROR:
+    case types.FETCH_BANNER_ERROR:
       return {...state, ...action.err};
     default:
       return state;

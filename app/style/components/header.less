@@ -79,6 +79,31 @@
 		display: flex;
 		align-items: center;
 
+		.login {
+			display: flex;
+			align-items: center;
+
+			.triangle {
+				width: 0;
+				height: 0;
+				border-top: 4px solid @BORDER_COLOR;
+				border-right: 4px solid transparent;
+				border-left: 4px solid transparent;
+			}
+
+			img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				margin-right: 5px;
+			}
+
+			span {
+				color: @BORDER_COLOR;
+				margin-right: 8px;
+			}
+		}
+
 		.header_action {
 			span {
 				display: inline-block;
