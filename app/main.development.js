@@ -44,13 +44,13 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1200,
-    height: 900,
+    width: 1400,
+    height: 1000,
     frame: false,
     resizable: true,
-    minWidth: 1200,
-    minHeight: 900,
-    directWrite: true
+    minWidth: 1400,
+    minHeight: 1000,
+    directWrite: false
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
@@ -78,11 +78,27 @@ app.on('ready', async () => {
     });
   }
 
+  // 窗口缩放
   ipcMain.on('minsize', () => {
     mainWindow.minimize();
   });
 
   ipcMain.on('maxsize', () => {
     mainWindow.maximize();
+  });
+
+  // dialog
+  ipcMain.on('login', () => {
+    const loginWindow = new BrowserWindow({
+      width: 500,
+      height: 800,
+      center: true,
+      resizable: false,
+      movable: false,
+      alwaysOnTop: true,
+      frame: true
+    });
+
+    loginWindow.loadURL(`file://${__dirname}/login.html`);
   });
 });

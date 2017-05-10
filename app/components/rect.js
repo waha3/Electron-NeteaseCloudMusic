@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { debource } from '../utils/utils.js';
 
 export default class Rect extends Component {
   static propTypes = {
@@ -16,20 +17,21 @@ export default class Rect extends Component {
   time = null
 
   handleOnMouseEnter = () => {
-    this.time = setTimeout(() => {
+    const stateChange = debource(
       this.setState({
-        maskShow: true
-      });
-    }, 1000);
+        maskShow: false
+      }), 1000
+    );
+    stateChange();
   }
 
   handleOnMouseLeave = () => {
-    this.time = setTimeout(() => {
-      this.time = null;
+    const stateChange = debource(
       this.setState({
-        maskShow: false
-      });
-    }, 500);
+        maskShow: true
+      }), 1000
+    );
+    stateChange();
   }
 
   render() {

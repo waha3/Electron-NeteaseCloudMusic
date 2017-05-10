@@ -37,6 +37,8 @@ export default class Header extends Component {
 
   nextRouterHandle = () => window.history.forward();
 
+  handleLogin = () => ipcRenderer.send('login');
+
   render() {
     return (
       <div className="header">
@@ -54,7 +56,9 @@ export default class Header extends Component {
           />
         </div>
         <div className="right">
-          <div className="login">
+          <div
+            className="login"
+            onClick={this.handleLogin}>
             <img src="static/image/avatar.jpg" alt=""/>
             <span>未登录</span>
             <div className="triangle"></div>
