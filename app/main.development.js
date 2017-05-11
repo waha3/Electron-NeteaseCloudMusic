@@ -44,13 +44,13 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1400,
-    height: 1000,
+    // width: 1400,
+    // height: 1000,
     frame: false,
     resizable: true,
-    minWidth: 1400,
-    minHeight: 1000,
-    directWrite: false
+    minWidth: 1100,
+    minHeight: 800,
+    directWrite: true
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
@@ -96,7 +96,7 @@ app.on('ready', async () => {
       resizable: false,
       movable: false,
       alwaysOnTop: true,
-      frame: true
+      frame: false
     });
 
     loginWindow.loadURL(`file://${__dirname}/login.html`);

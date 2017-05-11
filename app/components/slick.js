@@ -5,7 +5,7 @@ export default class Slick extends Component {
   render() {
     return (
       <div className="slick">
-        hello world
+        
       </div>
     );
   }
