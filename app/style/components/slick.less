@@ -2,14 +2,36 @@
 	width: 300px;
 	height: 200px;
 	position: relative;
-  background-color: #f0f0f0;
+	background-color: #f0f0f0;
+	margin: auto;
+	position: relative;
 
 	.slick-wrap {
 		position: absolute;
-    width: 900px;
-    height: 100%;
-    > div {
-      float: left;
-    }
+		width: 900px;
+		height: 100%;
+
+		> div {
+			float: left;
+		}
+	}
+
+	button {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: yellow;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
+	.prev {
+		left: 0;
+	}
+
+	.next {
+		right: 0;
 	}
 }

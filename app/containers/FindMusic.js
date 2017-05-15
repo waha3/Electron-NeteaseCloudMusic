@@ -27,9 +27,9 @@ class FindMusic extends Component {
       <div className="findmusic">
         <Nav />
         <div className="banner row">
-          <Banner
+          {/*<Banner
             banners={banners}
-          />
+          />*/}
         </div>
         <div className="recommendMusicList row">
           <div className="title">推荐歌单</div>
