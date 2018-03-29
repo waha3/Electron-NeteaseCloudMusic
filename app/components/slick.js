@@ -60,7 +60,7 @@ export default class Slick extends Component {
               <div
                 key={index}
                 className={this.isInStage(index, activeIndex) ? 'is-instage' : ''}
-                style={{'display': activeIndex === index ? 'block' : 'none'}}>
+              >
                 <SlickItem
                   item={item}
                 />

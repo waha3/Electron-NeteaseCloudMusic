@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes.js';
 
-export function banner(state={
+export function banner(state = {
   banners: []
 }, action) {
   switch (action.type) {

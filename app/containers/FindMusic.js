@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { getRecommendPlaylist } from '../actions/recommendplaylist.js';
+// import { getRecommendPlaylist } from '../actions/recommendplaylist.js';
 import { getBanner } from '../actions/banner.js';
 import PropTypes from 'prop-types';
-import Banner from '../components/banner.js';
 import Nav from '../components/nav.js';
 import Rect from '../components/rect.js';
 
@@ -17,20 +16,16 @@ class FindMusic extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getRecommendPlaylist());
+    // dispatch(getRecommendPlaylist());
     dispatch(getBanner());
   }
 
   render() {
-    const { banners, recommendplaylist } = this.props;
+    const { recommendplaylist } = this.props;
     return (
       <div className="findmusic">
         <Nav />
-        <div className="banner row">
-          {/*<Banner
-            banners={banners}
-          />*/}
-        </div>
+        <div className="banner row"></div>
         <div className="recommendMusicList row">
           <div className="title">推荐歌单</div>
           <div className="content">
